@@ -30,6 +30,9 @@
                                         placeholder="আপনার মোবাইল লিখুন" required="">
                                 </div>
                                 <input type="hidden" id="cash" class=""name="payment_method" value="1">
+                                {{-- <input type="hidden" class=""name="size" value="{{ $product->size }}">
+                                <input type="hidden" class=""name="color" value="{{ $product->color }}">
+                                <input type="hidden" class=""name="hills" value="{{ $product->hills }}"> --}}
 
                                 <div class="form-group">
                                     <label for="shipping_method" class="text-dark">আপনার এরিয়া সিলেক্ট করুন :</label>
@@ -131,6 +134,9 @@
                                         <?php
                                         Session::put('order_total', $grandTotal);
                                         Session::put('shipping_total', $shipping);
+                                        // Session::put('size',  $product->size);
+                                        // Session::put('color', $product->color);
+                                        // Session::put('hells', $product->hells);
                                         ?>
                                     </tr>
                                 </tfoot>

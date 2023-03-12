@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 10, 2023 at 05:29 PM
+-- Generation Time: Mar 12, 2023 at 07:27 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -97,7 +97,8 @@ INSERT INTO `customers` (`id`, `name`, `mobile`, `address`, `created_at`, `updat
 (2, 'Polash Mia', '01737115041', 'Rangpur', '2022-12-29 12:52:48', '2022-12-29 12:52:48'),
 (3, 'Polash Mia', '01737115041', 'Rangpur', '2023-01-11 09:48:25', '2023-01-11 09:48:25'),
 (4, 'Asad', '01737115041', 'Rangpur', '2023-01-14 13:12:42', '2023-01-14 13:12:42'),
-(5, 'Asad', '01737115041', 'Rangpur', '2023-01-15 04:25:40', '2023-01-15 04:25:40');
+(5, 'Asad', '01737115041', 'Rangpur', '2023-01-15 04:25:40', '2023-01-15 04:25:40'),
+(6, 'prince', '1737115040', 'nilfamari', '2023-03-12 09:33:14', '2023-03-12 09:33:14');
 
 -- --------------------------------------------------------
 
@@ -152,7 +153,9 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (18, '2023_02_22_080234_create_shippings_table', 12),
 (19, '2023_02_22_130656_create_couriers_table', 13),
 (20, '2023_03_09_080326_add_multiple_column_to_settings_table', 14),
-(21, '2023_03_10_153535_create_slides_table', 15);
+(21, '2023_03_10_153535_create_slides_table', 15),
+(23, '2023_03_12_142208_add_multiple_column_to_orders_table', 16),
+(24, '2023_03_12_174919_add_multiple_column_to_order_details_table', 16);
 
 -- --------------------------------------------------------
 
@@ -195,7 +198,24 @@ INSERT INTO `orders` (`id`, `customer_id`, `order_total`, `shipping_total`, `del
 (8, 3, 1050.00, 100, 'Rangpur', 'Complete', '2023-01-11', '1673395200', 'Complete', '1', 1050, '2023-01-15', '1673740800', NULL, 'Complete', '2023-01-15', '1673740800', '2023-01-11 10:43:35', '2023-01-15 04:20:59'),
 (9, 4, 1476.00, 100, 'Rangpur', 'Complete', '2023-01-14', '1673654400', 'Complete', '1', 1476, '2023-01-15', '1673740800', NULL, 'Complete', '2023-01-15', '1673740800', '2023-01-14 13:12:42', '2023-01-15 04:17:46'),
 (10, 5, 788.00, 100, 'Rangpur', 'Processing', '2023-01-15', '1673740800', 'Processing', '1', 788, '2023-01-15', '1673740800', NULL, 'Processing', '2023-01-15', '1673740800', '2023-01-15 04:25:40', '2023-01-26 05:19:26'),
-(11, 5, 1100.00, 100, 'Rangpur', 'Cancel', '2023-01-15', '1673740800', 'Cancel', '1', 0, NULL, NULL, NULL, 'Cancel', NULL, NULL, '2023-01-15 04:29:08', '2023-01-26 05:15:36');
+(11, 5, 1100.00, 100, 'Rangpur', 'Cancel', '2023-01-15', '1673740800', 'Cancel', '1', 0, NULL, NULL, NULL, 'Cancel', NULL, NULL, '2023-01-15 04:29:08', '2023-01-26 05:15:36'),
+(12, 6, 1940.00, 100, 'nilfamari', 'Pending', '2023-03-12', '1678579200', 'Pending', '1', 0, NULL, NULL, NULL, 'Pending', NULL, NULL, '2023-03-12 09:33:14', '2023-03-12 09:33:14'),
+(13, 6, 850.00, 100, 'Rangpur', 'Pending', '2023-03-12', '1678579200', 'Pending', '1', 0, NULL, NULL, NULL, 'Pending', NULL, NULL, '2023-03-12 09:42:50', '2023-03-12 09:42:50'),
+(14, 6, 5915.00, 100, 'Rangpur', 'Pending', '2023-03-12', '1678579200', 'Pending', '1', 0, NULL, NULL, NULL, 'Pending', NULL, NULL, '2023-03-12 10:19:24', '2023-03-12 10:19:24'),
+(15, 6, 4665.00, 100, 'Rangpur', 'Pending', '2023-03-12', '1678579200', 'Pending', '1', 0, NULL, NULL, NULL, 'Pending', NULL, NULL, '2023-03-12 10:40:34', '2023-03-12 10:40:34'),
+(16, 6, 4665.00, 100, 'Rangpur', 'Pending', '2023-03-12', '1678579200', 'Pending', '1', 0, NULL, NULL, NULL, 'Pending', NULL, NULL, '2023-03-12 10:52:05', '2023-03-12 10:52:05'),
+(17, 6, 4665.00, 100, 'Rangpur', 'Pending', '2023-03-12', '1678579200', 'Pending', '1', 0, NULL, NULL, NULL, 'Pending', NULL, NULL, '2023-03-12 10:53:32', '2023-03-12 10:53:32'),
+(18, 6, 850.00, 100, 'nilfamari', 'Pending', '2023-03-12', '1678579200', 'Pending', '1', 0, NULL, NULL, NULL, 'Pending', NULL, NULL, '2023-03-12 10:54:36', '2023-03-12 10:54:36'),
+(19, 6, 600.00, 100, 'pabna', 'Pending', '2023-03-12', '1678579200', 'Pending', '1', 0, NULL, NULL, NULL, 'Pending', NULL, NULL, '2023-03-12 11:42:12', '2023-03-12 11:42:12'),
+(20, 6, 800.00, 100, 'coxbazar', 'Pending', '2023-03-12', '1678579200', 'Pending', '1', 0, NULL, NULL, NULL, 'Pending', NULL, NULL, '2023-03-12 11:53:24', '2023-03-12 11:53:24'),
+(21, 6, 600.00, 100, 'lalmoni', 'Pending', '2023-03-12', '1678579200', 'Pending', '1', 0, NULL, NULL, NULL, 'Pending', NULL, NULL, '2023-03-12 11:59:04', '2023-03-12 11:59:04'),
+(22, 6, 300100.00, 100, 'Rangpur', 'Pending', '2023-03-12', '1678579200', 'Pending', '1', 0, NULL, NULL, NULL, 'Pending', NULL, NULL, '2023-03-12 12:02:37', '2023-03-12 12:02:37'),
+(23, 6, 300100.00, 100, 'coxbazar', 'Pending', '2023-03-12', '1678579200', 'Pending', '1', 0, NULL, NULL, NULL, 'Pending', NULL, NULL, '2023-03-12 12:09:55', '2023-03-12 12:09:55'),
+(24, 6, 1350.00, 100, 'Rangpur', 'Pending', '2023-03-12', '1678579200', 'Pending', '1', 0, NULL, NULL, NULL, 'Pending', NULL, NULL, '2023-03-12 12:12:43', '2023-03-12 12:12:43'),
+(25, 6, 1350.00, 100, 'Rangpur', 'Pending', '2023-03-12', '1678579200', 'Pending', '1', 0, NULL, NULL, NULL, 'Pending', NULL, NULL, '2023-03-12 12:13:48', '2023-03-12 12:13:48'),
+(26, 6, 2050.00, 100, 'Rangpur', 'Pending', '2023-03-12', '1678579200', 'Pending', '1', 0, NULL, NULL, NULL, 'Pending', NULL, NULL, '2023-03-12 12:14:50', '2023-03-12 12:14:50'),
+(27, 6, 2050.00, 100, 'Rangpur', 'Pending', '2023-03-12', '1678579200', 'Pending', '1', 0, NULL, NULL, NULL, 'Pending', NULL, NULL, '2023-03-12 12:15:23', '2023-03-12 12:15:23'),
+(28, 6, 600.00, 100, 'Rangpur', 'Pending', '2023-03-12', '1678579200', 'Pending', '1', 0, NULL, NULL, NULL, 'Pending', NULL, NULL, '2023-03-12 12:17:01', '2023-03-12 12:17:01');
 
 -- --------------------------------------------------------
 
@@ -212,21 +232,36 @@ CREATE TABLE `order_details` (
   `product_price` int(11) NOT NULL,
   `product_quantity` int(11) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `size` int(11) DEFAULT NULL,
+  `color` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `hills` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `order_details`
 --
 
-INSERT INTO `order_details` (`id`, `order_id`, `product_id`, `product_name`, `product_image`, `product_price`, `product_quantity`, `created_at`, `updated_at`) VALUES
-(1, 1, 1, 'পাই-লস সমস্যার স্থায়ী সমাধান হারবাল স্প্রে', 'upload/product/product1672158929.jpg', 900, 1, '2022-12-28 23:51:05', '2022-12-28 23:51:05'),
-(3, 4, 4, 'CACTUS TOYS', 'upload/product/product1672228468.jpg', 950, 2, '2022-12-29 12:52:49', '2022-12-29 12:52:49'),
-(4, 5, 4, 'CACTUS TOYS', 'upload/product/product1672228468.jpg', 950, 1, '2023-01-11 09:48:25', '2023-01-11 09:48:25'),
-(5, 7, 4, 'CACTUS TOYS', 'upload/product/product1672228468.jpg', 950, 1, '2023-01-11 10:42:27', '2023-01-11 10:42:27'),
-(6, 9, 27, 'HairRe-Growth Herbal Roller Is An INNOVATIVE ROLLER ESSENCE', 'upload/product/product1673693673.jpg', 688, 2, '2023-01-14 13:12:42', '2023-01-14 13:12:42'),
-(7, 10, 27, 'HairRe-Growth Herbal Roller Is An INNOVATIVE ROLLER ESSENCE', 'upload/product/product1673693673.jpg', 688, 1, '2023-01-15 04:25:40', '2023-01-15 04:25:40'),
-(8, 11, 23, 'Mini Portable Pocket Shaver', 'upload/product/product1673692642.jpg', 500, 2, '2023-01-15 04:29:08', '2023-01-15 04:29:08');
+INSERT INTO `order_details` (`id`, `order_id`, `product_id`, `product_name`, `product_image`, `product_price`, `product_quantity`, `created_at`, `updated_at`, `size`, `color`, `hills`) VALUES
+(1, 1, 1, 'পাই-লস সমস্যার স্থায়ী সমাধান হারবাল স্প্রে', 'upload/product/product1672158929.jpg', 900, 1, '2022-12-28 23:51:05', '2022-12-28 23:51:05', NULL, NULL, NULL),
+(3, 4, 4, 'CACTUS TOYS', 'upload/product/product1672228468.jpg', 950, 2, '2022-12-29 12:52:49', '2022-12-29 12:52:49', NULL, NULL, NULL),
+(4, 5, 4, 'CACTUS TOYS', 'upload/product/product1672228468.jpg', 950, 1, '2023-01-11 09:48:25', '2023-01-11 09:48:25', NULL, NULL, NULL),
+(5, 7, 4, 'CACTUS TOYS', 'upload/product/product1672228468.jpg', 950, 1, '2023-01-11 10:42:27', '2023-01-11 10:42:27', NULL, NULL, NULL),
+(6, 9, 27, 'HairRe-Growth Herbal Roller Is An INNOVATIVE ROLLER ESSENCE', 'upload/product/product1673693673.jpg', 688, 2, '2023-01-14 13:12:42', '2023-01-14 13:12:42', NULL, NULL, NULL),
+(7, 10, 27, 'HairRe-Growth Herbal Roller Is An INNOVATIVE ROLLER ESSENCE', 'upload/product/product1673693673.jpg', 688, 1, '2023-01-15 04:25:40', '2023-01-15 04:25:40', NULL, NULL, NULL),
+(8, 11, 23, 'Mini Portable Pocket Shaver', 'upload/product/product1673692642.jpg', 500, 2, '2023-01-15 04:29:08', '2023-01-15 04:29:08', NULL, NULL, NULL),
+(9, 12, 10, 'Seem Sure Hair Growth Serum', 'upload/product/product1673618774.jpg', 920, 2, '2023-03-12 09:33:14', '2023-03-12 09:33:14', NULL, NULL, NULL),
+(10, 13, 9, 'Whitening And Freckle Removing Collagen Body Lotion', 'upload/product/product1673618543.jpeg', 750, 1, '2023-03-12 09:42:50', '2023-03-12 09:42:50', NULL, NULL, NULL),
+(11, 14, 26, 'Tianxi Fine Grain Grinding Mixer Household Small Coarse Grain Flour Beater', 'upload/product/product1673693572.jpg', 750, 1, '2023-03-12 10:19:24', '2023-03-12 10:19:24', NULL, NULL, NULL),
+(12, 14, 23, 'Mini Portable Pocket Shaver', 'upload/product/product1673692642.jpg', 500, 1, '2023-03-12 10:19:24', '2023-03-12 10:19:24', NULL, NULL, NULL),
+(13, 14, 15, '18-In-1 Snowflake Multi-Tool Screwdriver', 'upload/product/product1673691279.jpg', 4565, 1, '2023-03-12 10:19:25', '2023-03-12 10:19:25', NULL, NULL, NULL),
+(14, 15, 15, '18-In-1 Snowflake Multi-Tool Screwdriver', 'upload/product/product1673691279.jpg', 4565, 1, '2023-03-12 10:40:34', '2023-03-12 10:40:34', NULL, NULL, NULL),
+(15, 16, 15, '18-In-1 Snowflake Multi-Tool Screwdriver', 'upload/product/product1673691279.jpg', 4565, 1, '2023-03-12 10:52:05', '2023-03-12 10:52:05', NULL, NULL, NULL),
+(16, 18, 9, 'Whitening And Freckle Removing Collagen Body Lotion', 'upload/product/product1673618543.jpeg', 750, 1, '2023-03-12 10:54:36', '2023-03-12 10:54:36', NULL, NULL, NULL),
+(17, 21, 23, 'Mini Portable Pocket Shaver', 'upload/product/product1673692642.jpg', 500, 1, '2023-03-12 11:59:04', '2023-03-12 11:59:04', NULL, NULL, NULL),
+(18, 22, 6, 'Byke', 'upload/product/product1673450386.webp', 300000, 1, '2023-03-12 12:02:37', '2023-03-12 12:02:37', NULL, NULL, NULL),
+(19, 23, 6, 'Byke', 'upload/product/product1673450386.webp', 300000, 1, '2023-03-12 12:09:55', '2023-03-12 12:09:55', 41, 'black', NULL),
+(20, 28, 23, 'Mini Portable Pocket Shaver', 'upload/product/product1673692642.jpg', 500, 1, '2023-03-12 12:17:01', '2023-03-12 12:17:01', 41, 'white', 4);
 
 -- --------------------------------------------------------
 
@@ -334,8 +369,7 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('GGqpP9jmBy4Yt36Zij0PSUHXihc36iUklXxubfpD', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36', 'YTo2OntzOjY6Il90b2tlbiI7czo0MDoiU3hrRElOOVJ6WTNBV3RPZ2poeGJHbFlFWnVSbkZTdG5lOFBGNEl6dCI7czozOiJ1cmwiO2E6MDp7fXM6OToiX3ByZXZpb3VzIjthOjE6e3M6MzoidXJsIjtzOjMxOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvc2xpZGUvYWRkIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MTtzOjIxOiJwYXNzd29yZF9oYXNoX3NhbmN0dW0iO3M6NjA6IiQyeSQxMCRaVVF0Y3d5VGFIUFo1TlRPM0xqaUVlQkhwcVpnLkVURU1CWkpGaW1iWXRYS2JacGxtMU9lQyI7fQ==', 1678447408),
-('lbgV5Uw1vUOQ1zH3Vux2gPsOAvqzmD2TzUATUkzB', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoicGxieEVyVXBEN2s5ZUYzOHNYajVMVkhKOXhMcFU3TThhNlRGQWV2eCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6NDk6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9hZG1pbi12aWV3LW9yZGVyLWludm9pY2UvMTEiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX1zOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aToxO3M6MjE6InBhc3N3b3JkX2hhc2hfc2FuY3R1bSI7czo2MDoiJDJ5JDEwJFpVUXRjd3lUYUhQWjVOVE8zTGppRWVCSHBxWmcuRVRFTUJaSkZpbWJZdFhLYlpwbG0xT2VDIjt9', 1678465421);
+('YqzohEQaEmtlO92cY34ezSMv5PSPbem2u79KT0Ja', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36', 'YToxMzp7czo2OiJfdG9rZW4iO3M6NDA6IklFMFF5S3NlYndLd2VDMzJJRGZFa2F2T2tOUU01RGdMN3BUQW1tZmMiO3M6OToiX3ByZXZpb3VzIjthOjE6e3M6MzoidXJsIjtzOjQ4OiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYWRtaW4tdmlldy1vcmRlci1kZXRhaWwvMjgiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX1zOjI2OiI0eVRsVERLdTNvSk9mekRfY2FydF9pdGVtcyI7TzozMjoiRGFycnlsZGVjb2RlXENhcnRcQ2FydENvbGxlY3Rpb24iOjI6e3M6ODoiACoAaXRlbXMiO2E6MDp7fXM6Mjg6IgAqAGVzY2FwZVdoZW5DYXN0aW5nVG9TdHJpbmciO2I6MDt9czoxMToib3JkZXJfdG90YWwiO2k6NjAwO3M6MTQ6InNoaXBwaW5nX3RvdGFsIjtpOjEwMDtzOjQ6InNpemUiO047czo1OiJjb2xvciI7TjtzOjU6ImhlbGxzIjtOO3M6MTE6ImN1c3RvbWVyX2lkIjtpOjY7czoxMzoiY3VzdG9tZXJfbmFtZSI7czo2OiJwcmluY2UiO3M6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjE7czoyMToicGFzc3dvcmRfaGFzaF9zYW5jdHVtIjtzOjYwOiIkMnkkMTAkWlVRdGN3eVRhSFBaNU5UTzNMamlFZUJIcHFaZy5FVEVNQlpKRmltYll0WEtiWnBsbTFPZUMiO30=', 1678645285);
 
 -- --------------------------------------------------------
 
@@ -368,7 +402,7 @@ CREATE TABLE `settings` (
 --
 
 INSERT INTO `settings` (`id`, `mobile`, `logo`, `created_at`, `updated_at`, `title`, `bkas`, `pixel`, `facebook`, `instragram`, `youtube`, `fbpage`, `footer_description`, `contact`, `privacy`, `return`, `term`) VALUES
-(9, '01737115041', 'website/logo/logo1678351679.png', '2023-03-09 02:26:14', '2023-03-09 02:47:59', 'Digital Axis', '01737115042', NULL, 'https://www.facebook.com/', 'https://www.facebook.com/', 'https://www.facebook.com/', '<iframe src=\"https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fprofile.php%3Fid%3D100068928064983&tabs=timeline&width=340&height=331&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId\" width=\"340\" height=\"270\" style=\"border:none;overflow:hidden\" scrolling=\"no\" frameborder=\"0\" allowfullscreen=\"true\" allow=\"autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share\"></iframe>', '<p><span font-size:22px;\"=\"\">Largest product search engine, maximum categorized online shopping mall and quickest home delivery system.</span><br></p>', '<p><span>House #8, Road #14, </span></p><p><span>Dhanmondi, Dhaka-1209, </span></p><p><b>Email</b>:polash@gmail.com<br></p>', '<div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente corrupti fugiat nemo, amet aut, iste modi magni vero quas similique ipsum nostrum culpa eum, ad sint exercitationem quae magnam doloribus.</div>', '<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente corrupti fugiat nemo, amet aut, iste modi magni vero quas similique ipsum nostrum culpa eum, ad sint exercitationem quae magnam doloribus.<br></p>', '<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente corrupti fugiat nemo, amet aut, iste modi magni vero quas similique ipsum nostrum culpa eum, ad sint exercitationem quae magnam doloribus.<br></p>');
+(9, '01737115041', 'website/logo/logo1678480174.png', '2023-03-09 02:26:14', '2023-03-10 14:29:34', 'Digital Axis', '01737115042', NULL, 'https://www.facebook.com/', 'https://www.facebook.com/', 'https://www.facebook.com/', '<iframe src=\"https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fprofile.php%3Fid%3D100068928064983&tabs=timeline&width=340&height=331&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId\" width=\"300\" height=\"270\" style=\"border:none;overflow:hidden\" scrolling=\"no\" frameborder=\"0\" allowfullscreen=\"true\" allow=\"autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share\"></iframe>', '<p><span font-size:22px;\"=\"\">Largest product search engine, maximum categorized online shopping mall and quickest home delivery system.</span><br></p>', '<p><span>House #8, Road #14, </span></p><p><span>Dhanmondi, Dhaka-1209, </span></p><p><b>Email</b>:polash@gmail.com<br></p>', '<div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente corrupti fugiat nemo, amet aut, iste modi magni vero quas similique ipsum nostrum culpa eum, ad sint exercitationem quae magnam doloribus.</div>', '<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente corrupti fugiat nemo, amet aut, iste modi magni vero quas similique ipsum nostrum culpa eum, ad sint exercitationem quae magnam doloribus.<br></p>', '<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente corrupti fugiat nemo, amet aut, iste modi magni vero quas similique ipsum nostrum culpa eum, ad sint exercitationem quae magnam doloribus.<br></p>');
 
 -- --------------------------------------------------------
 
@@ -646,7 +680,7 @@ ALTER TABLE `couriers`
 -- AUTO_INCREMENT for table `customers`
 --
 ALTER TABLE `customers`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -658,19 +692,19 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `order_details`
 --
 ALTER TABLE `order_details`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`

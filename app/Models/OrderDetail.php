@@ -15,6 +15,7 @@ class OrderDetail extends Model
     public static function newOrderDetail($order)
     {
         self::$cartProducts = \Cart::getContent();
+        
         foreach (self::$cartProducts as $cartProduct)
         {
             self::$orderDetail = new OrderDetail();
@@ -24,6 +25,9 @@ class OrderDetail extends Model
             self::$orderDetail->product_image        = $cartProduct->attributes->image;
             self::$orderDetail->product_price        = $cartProduct->price;
             self::$orderDetail->product_quantity     = $cartProduct->quantity;
+            self::$orderDetail->color                = $cartProduct->attributes->color;
+            self::$orderDetail->size                 = $cartProduct->attributes->size;
+            self::$orderDetail->hills                = $cartProduct->attributes->hills;
             self::$orderDetail->save();
         }
     }

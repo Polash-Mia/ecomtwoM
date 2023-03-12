@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Order;
 use Illuminate\Http\Request;
 // use Cart;
 use Darryldecode\Cart\Cart;
 use App\Models\Product;
+use League\CommonMark\Node\Query\OrExpr;
 
 class CartController extends Controller
 {
@@ -14,6 +16,7 @@ class CartController extends Controller
     public function index(Request $request, $id)
     {
         $this->product = Product::find($id);
+        
 
         \Cart::add(array (
             'id'        => $this->product->id,
@@ -21,7 +24,10 @@ class CartController extends Controller
             'price'     => $this->product->selling_price,
             'quantity'  => $request->quantity,
             'attributes'=> [
-                'image' => $this->product->image
+                'image' => $this->product->image,
+                'size'  =>  $request->size,
+                'color' =>  $request->color,
+                'hills' =>  $request->hills,
             ],
         ));
         return redirect('/show-cart');

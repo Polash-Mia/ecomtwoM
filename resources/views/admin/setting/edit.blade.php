@@ -64,7 +64,7 @@
                         <div class="form-group row mb-4">
                             <label for="title" class="col-sm-3 col-form-label"> facebook page </label>
                             <div class="col-sm-9">
-                                <input type="text" name="fbpage" value="{{ $setting->facebook }}" class="form-control" id="title"/>
+                                <input type="text" name="fbpage" value="{{ $setting->fbpage }}" class="form-control" id="title"/>
                             </div>
                         </div>
                         <div class="form-group row mb-4">

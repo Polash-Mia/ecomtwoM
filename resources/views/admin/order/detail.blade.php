@@ -83,6 +83,9 @@
                             <th>SL NO</th>
                             <th>Product ID</th>
                             <th>Product Name</th>
+                            <th>Product Size</th>
+                            <th>Product Color</th>
+                            <th>Heels</th>
                             <th>Unit Price</th>
                             <th>Quantity</th>
                             <th>Total Price</th>
@@ -94,6 +97,9 @@
                                 <td>{{$loop->iteration}}</td>
                                 <td>{{$order->product_id}}</td>
                                 <td>{{$order->product_name}}</td>
+                                <td>{{$order->size}}</td>
+                                <td>{{$order->color}}</td>
+                                <td>{{$order->hills}}</td>
                                 <td>{{$order->product_price}}</td>
                                 <td>{{$order->product_quantity}}</td>
                                 <td>{{$order->product_price * $order->product_quantity }}</td>

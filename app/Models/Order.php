@@ -16,6 +16,9 @@ class Order extends Model
         self::$order->customer_id       = $customer->id;
         self::$order->order_total       = Session::get('order_total');      
         self::$order->shipping_total    = Session::get('shipping_total');
+        // self::$order->size              = Session::get('size');
+        // self::$order->color             = Session::get('color');
+        // self::$order->hells             = Session::get('hells');
         self::$order->delivery_address  = $request->delivery_address;
         self::$order->order_date        = date('Y-m-d');
         self::$order->order_timestamp   = strtotime(date('Y-m-d'));
